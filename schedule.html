@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Schedule</title>
+</head>
+<body>
+    <h1>Class Schedule</h1>
+    <form method="POST">
+        <input type="text" name="course_name" placeholder="Course Name" required>
+        <input type="text" name="day" placeholder="Day" required>
+        <input type="text" name="time" placeholder="Time" required>
+        <input type="text" name="room" placeholder="Room" required>
+        <button type="submit">Add Class</button>
+    </form>
+    <h2>Current Schedule</h2>
+    <ul>
+        {% for schedule in schedules %}
+            <li>{{ schedule.course_name }} - {{ schedule.day }} at {{ schedule.time }} in {{ schedule.room }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

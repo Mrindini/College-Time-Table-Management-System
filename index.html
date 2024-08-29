@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Time Table Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <a href="{{ url_for('schedule') }}">Manage Schedule</a>
+    <a href="{{ url_for('announcements') }}">View Announcements</a>
+    <a href="{{ url_for('attendance') }}">Track Attendance</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

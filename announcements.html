@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Announcements</title>
+</head>
+<body>
+    <h1>Announcements</h1>
+    <form method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="content" placeholder="Announcement Content" required></textarea>
+        <button type="submit">Post Announcement</button>
+    </form>
+    <h2>Current Announcements</h2>
+    <ul>
+        {% for announcement in announcements %}
+            <li><strong>{{ announcement.title }}</strong>: {{ announcement.content }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
